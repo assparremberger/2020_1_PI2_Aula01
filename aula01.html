@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula01 - Revisão JavaScript</title>
+</head>
+<body>
+    <button id="btnGirar" onclick="girar()">Girar</button>
+    <div id="div01" onmouseover="girar()" 
+        onmouseout="document.getElementById('div01').
+        style.background = 'red'">
+
+    </div>
+
+    <script>
+        var div01 = document.getElementById("div01");
+
+        function girar(){
+            div01.style.transition = "width 2s, height 3s";
+            div01.style.width = "300px";
+            div01.style.height = "250px";
+            
+        }
+
+
+        div01.style.width = "150px";
+        div01.style.height = "100px";
+        div01.style.background = "red";
+        div01.style.margin = "50px";
+
+        function trocarCor(){
+            div01.style.background = "blue";
+        }
+
+
+
+
+
+    </script>
+    <hr>
+    <input type="text" id="txtTexto" />
+    <button id="btnAdicionar" onclick="adicionar()">Adicionar</button> <br>
+    <p id="texto"></p>
+
+    <script>
+        var txtTexto = document.getElementById("txtTexto");
+        var texto = document.getElementById("texto");
+        var array01 = new Array();
+
+        function adicionar(){
+            array01.push( txtTexto.value );
+            array01.sort();
+            txtTexto.value = "";
+            texto.innerHTML = array01.join("<br>");
+        }
+
+
+    </script>
+
+
+</body>
+</html>
